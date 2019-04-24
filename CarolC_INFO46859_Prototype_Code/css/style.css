@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "roboto", sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    padding-bottom: .25em;
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(0, 0, 0, .3);
+    padding-bottom: 1em;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 700;
+    padding-bottom: .5em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+#hero {
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+}
+
+/* JJ Bastida's CSS grid */
+
+#content {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: [whitespace] 1fr [top] 2fr [tab] 1fr [content] 9fr;
+    grid-template-columns: [whitespace] 1fr [content] 10fr [whitespace]1fr
+}
+
+#sprinters {
+    font-size: 1.5em;
+    grid-row: top;
+    font-weight: 700;
+    grid-column: content;
+}
+
+#sprinters span {
+    border-bottom: 3px solid red;
+}
+
+#main {
+    grid-row: content;
+    grid-column: content;
+}
+
+.mini {
+    font-size: .9em;
+    margin-bottom: 10%;
+}
+
+.button {
+    padding: .5em 1.25em;
+    border-radius: 200px;
+    border: none;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.GObutton {
+    padding: .4em 1em;
+    display:inline;
+    border-radius: 200px;
+    border: none;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+#gradient {
+    grid-column: 1/ span 3;
+    grid-row: 1 / span 3;
+    background: linear-gradient(45deg, #F07C82, white);
+    z-index: -1;
+}
+
+#solid {
+    grid-column: 1/ span 3;
+    grid-row: 1 / span 3;
+    z-index: -1;
+}
+
+#tabs {
+    grid-column: content;
+    grid-row: tab;
+}
+
+#tabs > div {
+    font-weight: 700;
+    letter-spacing: .02;
+    display: inline-block;
+    height: 100%;
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 1em 2em;
+    box-sizing: border-box;
+}
+
+#threeColumn {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: [stats]1fr [instructions]2fr [timeline]1fr;
+    padding: 3em 0 0 0;
+}
+
+#stats {
+    grid-column: stats
+}
+
+#instructions {
+    grid-column: instructions;
+    padding-right: 5.1em;
+    margin-bottom: 10%;
+}
+
+#timeline {
+    grid-column: timeline
+}
+
+#middle {
+    grid-column: 1 / span 2;
+}
+
+#twoColumn {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: [agenda]3fr [timeline]1fr;
+    padding: 3em 0 0 0;
+}
+
+#agenda {
+    grid-column: agenda;
+    padding-right: 5.1em;
+}
+
+#go {
+    grid-column: go
+}
+
+.textLink {
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown {
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: .5em;
+    user-select: none;
+}
+
+.subtitle {
+    display: inline;
+    margin-left: .5em;
+}
+
+.innerText {
+    padding: 1em 0;
+    visibility: hidden;
+    margin-right: 20%;
+}
+
+.icons {
+    width: 10%;
+    height: 10%;
+}
+
+.timeline {
+    width: 60%;
+}
+
+.timeline2 {
+    width: 70%;
+}
+
+.next-back {
+    display:inline; 
+    width: 1.5em;
+    margin-left: 2%;
+    vertical-align: middle;
+}
+
+.icons-link {
+    display:inline; 
+    width: 1.2em;
+    margin-left: 2%;
+    vertical-align: middle;
+}
+
+.middleText {
+    padding-bottom: 10%;
+}
+
+/* JJ Bastida's responsive CSS */
+
+@media all and (max-width:45em) {
+    #hero {
+        height: auto;
+        width:100vw;
+        top: auto;
+        bottom: 0;
+        right: 0;
+    }
+    #threeColumn {
+        grid-template-columns: 1fr
+    }
+    #stats {
+        grid-column: 1
+    }
+    #instructions {
+        grid-column: 1
+    }
+    #timeline {
+        grid-column: 1
+    }
+    #middle {
+        grid-column: 1 / span 2;
+    }
+}
